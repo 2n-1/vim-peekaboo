@@ -228,12 +228,12 @@ function! peekaboo#aboo()
       noautocmd execute 'tabnext' positions.current.tab
       call s:close()
       noautocmd execute positions.current.win.'wincmd w'
-      call peekaboo#aboo()
     endif
     if visualmode
       normal! gv
     endif
     call s:feed(cnt, mode, reg, rest)
+    call peekaboo#aboo()
   catch /^Vim:Interrupt$/
     return
   finally
