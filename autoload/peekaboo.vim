@@ -233,13 +233,13 @@ function! peekaboo#aboo()
       normal! gv
     endif
     call s:feed(cnt, mode, reg, rest)
-    call peekaboo#aboo()
   catch /^Vim:Interrupt$/
     return
   finally
     let [&showtabline, &laststatus] = [stl, lst]
     call s:close()
     redraw
+    call peekaboo#aboo()
   endtry
 endfunction
 
