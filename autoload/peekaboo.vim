@@ -56,7 +56,6 @@ endfunction
 
 " Closes peekaboo buffer
 function! s:close()
-
 "silent! execute 'bd' s:buf_peekaboo
 "  let s:buf_peekaboo = 0
 "  execute s:winrestcmd
@@ -228,7 +227,7 @@ function! peekaboo#aboo()
     else
       noautocmd execute 'tabnext' positions.current.tab
       call s:close()
-      noautocmd execute positions.current.win.'wincmd w'
+      " noautocmd execute positions.current.win.'wincmd w'
     endif
     if visualmode
       normal! gv
