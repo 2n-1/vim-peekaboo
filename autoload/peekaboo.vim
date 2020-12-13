@@ -222,17 +222,17 @@ function! peekaboo#aboo()
 
     " - Make sure that we're back to the original tab/window/buffer
     "   - e.g. g:peekaboo_window = 'tabnew' / 'enew'
-    if inplace
-      noautocmd execute positions.current.win.'wincmd w'
-      noautocmd execute 'buf' positions.current.buf
-    else
-      noautocmd execute 'tabnext' positions.current.tab
-      call s:close()
-      noautocmd execute positions.current.win.'wincmd w'
-    endif
-    if visualmode
-      normal! gv
-    endif
+    " if inplace
+"      noautocmd execute positions.current.win.'wincmd w'
+"      noautocmd execute 'buf' positions.current.buf
+"    else
+"      noautocmd execute 'tabnext' positions.current.tab
+"      call s:close()
+"      noautocmd execute positions.current.win.'wincmd w'
+"    endif
+"    if visualmode
+"      normal! gv
+"    endif
     call s:feed(cnt, mode, reg, rest)
   catch /^Vim:Interrupt$/
     return
