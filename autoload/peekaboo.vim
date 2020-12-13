@@ -56,9 +56,10 @@ endfunction
 
 " Closes peekaboo buffer
 function! s:close()
-  silent! execute 'bd' s:buf_peekaboo
-  let s:buf_peekaboo = 0
-  execute s:winrestcmd
+
+"silent! execute 'bd' s:buf_peekaboo
+"  let s:buf_peekaboo = 0
+"  execute s:winrestcmd
 endfunction
 
 " Appends macro list for the specified group to Peekaboo window
