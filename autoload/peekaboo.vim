@@ -239,6 +239,7 @@ function! peekaboo#aboo()
     let [&showtabline, &laststatus] = [stl, lst]
     call s:close()
     redraw
+    sleep 200m
     call peekaboo#aboo()
   endtry
 endfunction
