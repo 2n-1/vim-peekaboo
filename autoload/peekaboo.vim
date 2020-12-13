@@ -56,9 +56,10 @@ endfunction
 
 " Closes peekaboo buffer
 function! s:close()
-"silent! execute 'bd' s:buf_peekaboo
-"  let s:buf_peekaboo = 0
-"  execute s:winrestcmd
+   silent! execute 'bd' s:buf_peekaboo
+   let s:buf_peekaboo = 0
+   execute s:winrestcmd
+   call peekaboo#aboo()
 endfunction
 
 " Appends macro list for the specified group to Peekaboo window
@@ -227,7 +228,7 @@ function! peekaboo#aboo()
     else
       noautocmd execute 'tabnext' positions.current.tab
       call s:close()
-      " noautocmd execute positions.current.win.'wincmd w'
+      noautocmd execute positions.current.win.'wincmd w'
     endif
     if visualmode
       normal! gv
